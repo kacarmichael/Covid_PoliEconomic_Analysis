@@ -9,7 +9,7 @@ import seaborn as sns
 
 from datetime import datetime as dt
 
-os.chdir(r"C:\Users\Aaron\Google Drive\School Stuff\Summer 2020\Project")
+os.chdir(r"****")
 
 tweets = pd.read_csv("tweets_final.csv")
 tweets = tweets.drop(columns=['Unnamed: 0'])
