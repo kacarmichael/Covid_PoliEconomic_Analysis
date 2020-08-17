@@ -12,7 +12,7 @@ from textblob import TextBlob
 from sklearn import preprocessing
 
 #Import separate csv files and compile into one
-os.chdir(r"C:\Users\Aaron\Google Drive\School Stuff\Summer 2020\Project\tweets")
+os.chdir(r"****")
 
 file_list = os.listdir()
 
