@@ -5,7 +5,7 @@ import os
 import time
 from datetime import datetime
 
-os.chdir(r'C:\Users\Aaron\Google Drive\School Stuff\Summer 2020\Project')
+os.chdir(r'****')
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -16,7 +16,7 @@ import requests
 symbols = pd.read_csv("symbols.txt", delimiter="\n", header=None, names=['symbol'])
 
 
-driver = webdriver.Firefox(executable_path=r'C:\Users\Aaron\Desktop\Gecko\geckodriver.exe', log_path=r'C:\Users\Aaron\Desktop\Gecko\geckodriver.log')
+driver = webdriver.Firefox(executable_path=r'****', log_path=r'****')
 driver.set_page_load_timeout(600)
 
 full_df = pd.DataFrame(columns = ['Date', 'Open', 'High', 'Low',
@@ -99,31 +99,3 @@ def scroll_to_bottom(driver):
                 ("return (window.pageYOffset !== undefined) ?"
                  " window.pageYOffset : (document.documentElement ||"
                  " document.body.parentNode || document.body);"))
-
-
-
-
-
-
-
-
-#Testing with amazon and Google
-test_symbols = ['AMZN', 'TPCO', "SCHL"]
-test_full_df = pd.DataFrame(columns = ['Date', 'Open', 'High', 'Low',
-                                  'Close*', 'Adj Close**', 'Volume', 'Symbol'])
-for symbol in test_symbols:
-    test_url = "https://www.finance.yahoo.com/quote/" + symbol + "/history"
-    driver.get(test_url)
-    scroll_to_bottom(driver)
-    html = driver.page_source
-    soup = bs(html, 'html.parser')
-    table = soup.find_all('table')[0]
-    test_df = pd.read_html(str(table))[0][0:-1] #Drop last row
-    try:
-        test_df['Date'] = pd.to_datetime(test_df['Date'])
-        test_df = test_df[test_df['Date'] >= '2020-01-01']
-    except:
-        print("No entry for " + symbol)
-    test_df['Symbol'] = symbol
-    test_full_df = test_full_df.append(test_df)
-
