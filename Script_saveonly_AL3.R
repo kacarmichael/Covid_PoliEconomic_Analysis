@@ -17,12 +17,12 @@ library(hunspell)
 
 library(textdata)
 
-consumer_key <- 'D5x1vHKynHbJFPCqleDkPhZlG'
-consumer_key_secret <- '9PGM9A7lyQ314JpQlVktLMQrZCQppzvy6iliA87vw76SIttuU5'
-appname <- 'MSIS 5600 ICE05'
+consumer_key <- '****'
+consumer_key_secret <- '****'
+appname <- '****'
 
-access_token <- '1163536831209779200-kI9ozP4gbmnWTzkzuklv91fqaYUbU3'
-access_token_secret <- 'tCX5F5a2HVdPn14pIhWRvfGHx4rf75wNoDEKy4d5ISqP9'
+access_token <- '****'
+access_token_secret <- '****'
 
 twitter_token <- create_token(app = appname,
                               consumer_key = consumer_key,
